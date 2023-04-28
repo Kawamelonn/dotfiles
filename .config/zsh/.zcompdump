@@ -1,4 +1,4 @@
-#files: 802	version: 5.9
+#files: 817	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -122,6 +122,7 @@ _comps=(
 'bunzip2' '_bzip2'
 'burst' '_mh'
 'busctl' '_busctl'
+'bwrap' '_bwrap'
 'bzcat' '_bzip2'
 'bzegrep' '_grep'
 'bzfgrep' '_grep'
@@ -150,6 +151,7 @@ _comps=(
 'chattr' '_chattr'
 'chcon' '_chcon'
 'chdir' '_cd'
+'checkupdates' '_checkupdates'
 'chfn' '_users'
 'chgrp' '_chown'
 'chimera' '_webbrowser'
@@ -262,6 +264,7 @@ _comps=(
 'doas' '_doas'
 'domainname' '_yp'
 'dos2unix' '_dos2unix'
+'downgrade' '_downgrade'
 'drill' '_drill'
 'dropbox' '_dropbox'
 'dropdb' '_postgresql'
@@ -345,6 +348,7 @@ _comps=(
 'fixwpps' '_psutils'
 'fixwwps' '_psutils'
 'flac' '_flac'
+'flatpak' '_flatpak'
 'flex' '_flex'
 'flex++' '_flex'
 'flipdiff' '_patchutils'
@@ -873,14 +877,23 @@ _comps=(
 'p4' '_perforce'
 'p4d' '_perforce'
 'pacat' '_pulseaudio'
+'paccache' '_paccache'
+'pacdiff' '_pacdiff'
+'pacignore' '_pacignore'
 'pack' '_pack'
 'packf' '_mh'
+'paclist' '_paclist'
+'paclog-pkglist' '_paclog-pkglist'
 'pacman' '_pacman'
 'pacman-conf' '_pacman'
 'pacman-key' '_pacman'
 'pacman.static' '_pacman'
 'pacmd' '_pulseaudio'
+'pacscripts' '_pacscripts'
+'pacsearch' '_pacsearch'
+'pacsort' '_pacsort'
 'pactl' '_pulseaudio'
+'pactree' '_pactree'
 'padsp' '_pulseaudio'
 'pandoc' '_pandoc'
 'paplay' '_pulseaudio'
@@ -1012,6 +1025,7 @@ _comps=(
 'quilt' '_quilt'
 'r' '_fc'
 'rake' '_rake'
+'rankmirrors' '_rankmirrors'
 'ranlib' '_ranlib'
 'rar' '_rar'
 'rc' '_sh'
@@ -1314,6 +1328,7 @@ _comps=(
 'unwrapdiff' '_patchutils'
 'unxz' '_xz'
 'unzip' '_zip'
+'updpkgsums' '_updpkgsums'
 'uptime' '_uptime'
 'urxvt' '_urxvt'
 'urxvt256c' '_urxvt'
@@ -1651,14 +1666,17 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _alacritty _bootctl _busctl _codium _coredumpctl \
-            _curl _gh _hostnamectl _journalctl _kernel-install \
-            _libinput _localectl _loginctl _machinectl _mkinitcpio \
-            _mpv _networkctl _oomctl _pacman _pulseaudio \
-            _resolvectl _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files \
-            _systemctl _systemd _systemd-analyze _systemd-delta _systemd-inhibit \
-            _systemd-nspawn _systemd-path _systemd-run _systemd-tmpfiles _timedatectl \
-            _udevadm _yay _cdr _all_labels _all_matches \
+autoload -Uz _alacritty _bootctl _busctl _bwrap _checkupdates \
+            _codium _coredumpctl _curl _downgrade _flatpak \
+            _gh _hostnamectl _journalctl _kernel-install _libinput \
+            _localectl _loginctl _machinectl _mkinitcpio _mpv \
+            _networkctl _oomctl _paccache _pacdiff _pacignore \
+            _paclist _paclog-pkglist _pacman _pacscripts _pacsearch \
+            _pacsort _pactree _pulseaudio _rankmirrors _resolvectl \
+            _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files _systemctl \
+            _systemd _systemd-analyze _systemd-delta _systemd-inhibit _systemd-nspawn \
+            _systemd-path _systemd-run _systemd-tmpfiles _timedatectl _udevadm \
+            _updpkgsums _yay _cdr _all_labels _all_matches \
             _alternative _approximate _arg_compile _arguments _bash_completions \
             _cache_invalid _call_function _combination _complete _complete_debug \
             _complete_help _complete_help_generic _complete_tag _comp_locale _correct \
