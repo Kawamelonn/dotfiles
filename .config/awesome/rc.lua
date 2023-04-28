@@ -354,7 +354,6 @@ globalkeys = gears.table.join(
             end
         end,
         {description = "go back", group = "client"}),
-
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -453,7 +452,7 @@ clientkeys = gears.table.join(
             c.minimized = true
         end ,
         {description = "minimize", group = "client"}),
-    awful.key({ modkey,           }, "m",
+    awful.key({ modkey, "Shift"          }, "g",
         function (c)
             c.maximized = not c.maximized
             c:raise()
@@ -470,9 +469,11 @@ clientkeys = gears.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
         end ,
-        {description = "(un)maximize horizontally", group = "client"})
-)
+        {description = "(un)maximize horizontally", group = "client"}),
 
+		awful.key({ modkey,           }, "g",      function (c) c.sticky = not c.sticky            end,
+        {description = "toggle sticky", group = "client"})
+)
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
@@ -619,5 +620,5 @@ beautiful.useless_gap = 5
 
 -- Autostart
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("feh --recursive --bg-fill --randomize ~/.wallpaper")
+awful.spawn.with_shell("sleep 0.3; feh --recursive --bg-fill --randomize ~/.wallpaper")
 awful.spawn.with_shell("nm-applet")
